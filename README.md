@@ -15,13 +15,20 @@ PROJECT GOALS
 
 Here are a few questions to  be discussed in this project:
 
+
 What is the distribution of conservation status for species?
+
 Are certain types of species more likely to be endangered?
+
 Are the differences between species and their conservation status significant?
+
 Which animal is most prevalent and what is their distribution amongst parks?
+
 Which species were spotted the most at each park?
 
+
 DATA
+
 This project has two data sets that came with the package. The first csv file has information about each species and another has observations of species with park locations. This data will be used to analyze the goals of the project.
 
 species_info.csv - contains data about different species and their conservation status
