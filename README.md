@@ -8,6 +8,7 @@ This project is about biodiversity in national parks and has data from the Natio
 **SCOPE**
 
 PROJECT GOALS
+
  This project will perform a biodiversity analysis for the National Parks Service. Some of the goals of this project includes:
 -  To perform some analysis on the conservation statuses of these species and investigate if there are any patterns or themes to the types of species that become endangered.
 -  To ensure the survival of at-risk species, to maintain the level of biodiversity within their parks.
