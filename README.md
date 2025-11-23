@@ -107,7 +107,7 @@ I created a contingency table (species category × conservation_status_filled) r
 
 Which animal is most prevalent and what is their distribution amongst parks?
 
-Most observed species (common name): I extracted the top species name from the observations dataset. I created a bar chart showing that species' observations across parks (top parks displayed). The study found that bats occurred the most number of times and they were most likely to be found in Yellowstone National Park.
+Most observed species (common name): I extracted the top species name from the observations dataset. I created a bar chart showing that species' observations across parks (top parks displayed). The study found that bats occurred the most number of times based on endangered species and they were most likely to be found in Yellowstone National Park.
 
 Species spotted the most at each park? 
 
