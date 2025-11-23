@@ -88,6 +88,7 @@ Here are the total number of observations logged in the parks, there are 3,314,7
 The project was able to make several data analysis and visualizations about the various species in four of the National Parks. I was also able to answer some of the questions posed in the goals of the project:
 
 What is the distribution of conservation status for species?
+
 Total species rows: 5,824.
 
 Conservation status counts: No Status: 5,633 species (96.72%) Species of Concern: 161 species (2.76%) Endangered: 16 species (0.27%) Threatened: 10 species (0.17%) In Recovery: 4 species (0.07%)
@@ -97,15 +98,20 @@ A bar chart of this distribution was generated.
 Interpretation: The vast majority of species entries have no conservation status recorded in this dataset. This large missingness strongly affects any downstream inference about the frequency of statuses.
 
 Are certain types of species more likely to be endangered?
+
 Proportions of Endangered by category were computed where applicable. Top proportions (if Endangered exists): e.g., Mammal and Birds had the highest endangered entries.
 
 Are the differences between species and their conservation status significant?
+
 I created a contingency table (species category × conservation_status_filled) ran a Chi-square test of independence on the contingency table: Test result: chi2 and p_value were computed. While mammals and Birds gave significant difference in conservation percentage, mammals and fish exhibited a statistically significant difference as well as fish and bird.
 
 Which animal is most prevalent and what is their distribution amongst parks?
+
 Most observed species (common name): I extracted the top species name from the observations dataset. I created a bar chart showing that species' observations across parks (top parks displayed). The study found that bats occurred the most number of times and they were most likely to be found in Yellowstone National Park.
 
-Species spotted the most at each park? For each park, I found the species with the maximum total observations and saved the result as park_top_species.csv.
+Species spotted the most at each park? 
+
+For each park, I found the species with the maximum total observations and saved the result as park_top_species.csv.
 
 **FURTHER RESEARCH AND RECOMMENDATION**
 
