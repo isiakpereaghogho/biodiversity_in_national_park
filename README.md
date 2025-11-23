@@ -1,4 +1,5 @@
 # biodiversity_in_national_park
+
 This project is about biodiversity in national parks
 
 **INTRODUCTION**
@@ -10,6 +11,7 @@ This project is about biodiversity in national parks and has data from the Natio
 PROJECT GOALS
 
  This project will perform a biodiversity analysis for the National Parks Service. Some of the goals of this project includes:
+ 
 -  To perform some analysis on the conservation statuses of these species and investigate if there are any patterns or themes to the types of species that become endangered.
 -  To ensure the survival of at-risk species, to maintain the level of biodiversity within their parks.
 -  To understand characteristics about the species and their conservations status, and those species and their relationship to the national parks.
@@ -42,14 +44,19 @@ The datasets provided have the following columns of data:
 species_info.csv:
 
 category - class of animal
+
 scientific_name - the scientific name of each species
+
 common_name - the common names of each species
+
 conservation_status - each species’ current conservation status
 
 observations.csv:
 
 scientific_name - the scientific name of each species
+
 park_name - Park where species were found
+
 observations - the number of times each species was observed at park
 
 **ANALYSIS**
@@ -58,18 +65,25 @@ observations - the number of times each species was observed at park
 In this section, descriptive statistics and data visualization techniques will be employed to understand the data better. Statistical inference will also be used to test if the observed values are statistically significant.
 
 Loading the Data
+
 To analyze the status of conservation of species and their observations in national parks, load the datasets into DataFrames. Once loaded as DataFrames the data can be explored and visualized with Python.
 
 In the next steps, Observations.csv and Species_info.csv are read in as DataFrames called observations_df and species_df respectively. 
 
 species
+
 The species_info.csv contains information on the different species in the National Parks. The columns in the data set include:
 
 category - The category of taxonomy for each species
+
 scientific_name - The scientific name of each species
+
 common_names - The common names of each species
+
 conservation_status - The species conservation status
+
 Data Characteristics
+
 Next, there will be a check for the dimensions of the data sets, for species there are 5,824 rows and 4 columns while observations has 23,296 rows and 3 columns.
 
 Next a count of the number of observations in the breakdown of the categories in conservation_status is done. There are 5,633 nan values which means that they are species without concerns. On the other hand there are 161 species of concern, 16 endangered, 10 threatened, and 4 in recovery.
@@ -77,6 +91,7 @@ Next a count of the number of observations in the breakdown of the categories in
 Note: In most cases coming across nan values must be treated carefully, but the absence of data here means that these species are not under any conservation status.
 
 observations
+
 The next section looks at observations data. The first task is to check the number of parks that are in the dataset and there are only 4 national parks.
 
 Here are the total number of observations logged in the parks, there are 3,314,739 sightings in the last 7 days... that's a lot of observations!
