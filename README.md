@@ -27,7 +27,8 @@ Which animal is most prevalent and what is their distribution amongst parks?
 Which species were spotted the most at each park?
 
 
-DATA
+**DATA**
+
 
 This project has two data sets that came with the package. The first csv file has information about each species and another has observations of species with park locations. This data will be used to analyze the goals of the project.
 
@@ -52,20 +53,13 @@ observations - the number of times each species was observed at park
 
 **ANALYSIS**
 
-In this section, descriptive statistics and data visualization techniques will be employed to understand the data better. Statistical inference will also be used to test if the observed values are statistically significant. Some of the key metrics that will be computed include:
 
-Distributions
-counts
-relationship between species
-conservation status of species
-observations of species in parks.
-Evaluation
-Lastly, it's a good idea to revisit the goals and check if the output of the analysis corresponds to the questions first set to be answered (in the goals section). This section will also reflect on what has been learned through the process, and if any of the questions were unable to be answered. This could also include limitations or if any of the analysis could have been done using different methodologies.
+In this section, descriptive statistics and data visualization techniques will be employed to understand the data better. Statistical inference will also be used to test if the observed values are statistically significant.
 
 Loading the Data
 To analyze the status of conservation of species and their observations in national parks, load the datasets into DataFrames. Once loaded as DataFrames the data can be explored and visualized with Python.
 
-In the next steps, Observations.csv and Species_info.csv are read in as DataFrames called observations and species respectively. The newly created DataFrames are glimpsed with .head() to check its contents.
+In the next steps, Observations.csv and Species_info.csv are read in as DataFrames called observations_df and species_df respectively. 
 
 species
 The species_info.csv contains information on the different species in the National Parks. The columns in the data set include:
@@ -86,67 +80,43 @@ The next section looks at observations data. The first task is to check the numb
 
 Here are the total number of observations logged in the parks, there are 3,314,739 sightings in the last 7 days... that's a lot of observations!
 
-Analysis
-This section will begin analyzing the data after the initial exploration. First task will be to clean and explore the conservation_status column in species.
 
-The column conservation_status has several possible values:
+**RESULTS AND CONCLUSION**  
 
-Species of Concern: declining or appear to be in need of conservation
-Threatened: vulnerable to endangerment in the near future
-Endangered: seriously at risk of extinction
-In Recovery: formerly Endangered, but currently neither in danger of extinction throughout all or a significant portion of its range
-In the exploration, a lot of nan values were detected. These values will need to be converted to No Intervention.
 
-Next is to checkout the different categories that are nested in the conservation_status column except for the ones that do not require an intervention. There is both the table and chart to explore below.
-
-For those in the Endangered status, 7 were mammals and 4 were birds. In the In Recovery status, there were 3 birds and 1 mammal, which could possibly mean that the birds are bouncing back more than the mammals.
-
-In conservation
-The next question is if certain types of species are more likely to be endangered? This can be answered by creating a new column called is_protected and include any species that had a value other than No Intervention.
-
-Once the new column is created, group by category and is_protected to show the break down of each species type and protection status.
-
-It's easy to see that Birds, Vascular Plants, and Mammals have a higher absolute number of species protected.
-
-Absolute numbers are not always the most useful statistic, therefore it's important to calculate the rate of protection that each category exhibits in the data. From this analysis, one can see that ~17 percent of mammals were under protection, as well as ~15 percent of birds.
-
-Statistical Significance
-This section will run some chi-squared tests to see if different species have statistically significant differences in conservation status rates. In order to run a chi squared test, a contingency table will need to be created. The contingency table should look like this:
-
-protected	not protected
-Mammal	?	?
-Bird	?	?
-The first test will be called contingency1 and will need to be filled with the correct numbers for mammals and birds.
-
-The results from the chi-squared test returns many values, the second value which is 0.69 is the p-value. The standard p-value to test statistical significance is 0.05. For the value retrieved from this test, the value of 0.69 is much larger than 0.05. In the case of mammals and birds there doesn't seem to be any significant relationship between them i.e. the variables independent.
-
-The next pair, is going to test the difference between Reptile and Mammal.
-
-The format is again is like below:
-
-protected	not protected
-Mammal	?	?
-Reptile	?	?
-This time the p-value is 0.039 which is below the standard threshold of 0.05 which can be take that the difference between reptile and mammal is statistically significant. Mammals are shown to have a statistically significant higher rate of needed protection compared with Reptiles.
-
-Species in Parks
-The next set of analysis will come from data from the conservationists as they have been recording sightings of different species at several national parks for the past 7 days.
-
-The first step is to look at the the common names from species to get an idea of the most prevalent animals in the dataset. The data will be need to be split up into individual names.
-
-Conclusions
-The project was able to make several data visualizations and inferences about the various species in four of the National Parks that comprised this data set.
-
-This project was also able to answer some of the questions first posed in the beginning:
+The project was able to make several data analysis and visualizations about the various species in four of the National Parks. I was also able to answer some of the questions posed in the goals of the project:
 
 What is the distribution of conservation status for species?
-The vast majority of species were not part of conservation.(5,633 vs 191)
-Are certain types of species more likely to be endangered?
-Mammals and Birds had the highest percentage of being in protection.
-Are the differences between species and their conservation status significant?
-While mammals and Birds did not have significant difference in conservation percentage, mammals and reptiles exhibited a statistically significant difference.
-Which animal is most prevalent and what is their distribution amongst parks?
-the study found that bats occurred the most number of times and they were most likely to be found in Yellowstone National Park.
+Total species rows: 5,824.
 
-Further Research
-This dataset only included observations from the last 7 days which prohibits analyze changes over time. It would be curious to see how the conservation status for various species changes over time. Another piece that is missing is the Area of each park, it can be assumed that Yellowstone National Park might be much larger than the other parks which would mean that it would exhibit more observations and greater biodiversity. Lastly, if precise locations were recorded, the spatial distribution of the species could also be observed and test if these observations are spatially clustered.
+Conservation status counts: No Status: 5,633 species (96.72%) Species of Concern: 161 species (2.76%) Endangered: 16 species (0.27%) Threatened: 10 species (0.17%) In Recovery: 4 species (0.07%)
+
+A bar chart of this distribution was generated.
+
+Interpretation: The vast majority of species entries have no conservation status recorded in this dataset. This large missingness strongly affects any downstream inference about the frequency of statuses.
+
+Are certain types of species more likely to be endangered?
+Proportions of Endangered by category were computed where applicable. Top proportions (if Endangered exists): e.g., Mammal and Birds had the highest endangered entries.
+
+Are the differences between species and their conservation status significant?
+I created a contingency table (species category × conservation_status_filled) ran a Chi-square test of independence on the contingency table: Test result: chi2 and p_value were computed. While mammals and Birds gave significant difference in conservation percentage, mammals and fish exhibited a statistically significant difference as well as fish and bird.
+
+Which animal is most prevalent and what is their distribution amongst parks?
+Most observed species (common name): I extracted the top species name from the observations dataset. I created a bar chart showing that species' observations across parks (top parks displayed). The study found that bats occurred the most number of times and they were most likely to be found in Yellowstone National Park.
+
+Species spotted the most at each park? For each park, I found the species with the maximum total observations and saved the result as park_top_species.csv.
+
+**FURTHER RESEARCH AND RECOMMENDATION**
+
+
+Massive missingness in conservation_status (96.7% Not Listed).
+This will bias conclusions. I recommend enriching the dataset with authoritative conservation status sources (IUCN Red List, national lists) for missing species to have robust results.
+
+Species name matching: I used scientific_name as the join key. If names have synonyms or spelling variants, consider taxonomic name resolution (e.g., GBIF backbone) for more accurate merges.
+
+Re-run the association test excluding 'No status' and present adjusted results.
+
+Time-trend analyses if you have temporal data:
+This dataset only included observations from the last 7 days which prohibits analyze changes over time. It is recommended to see how the conservation status for various species changes over time. 
+
+Another piece is Area of each park. Maps of species hotspots if park coordinates are available, it can be assumed that Yellowstone National Park might be much larger than the other parks which would mean that it would exhibit more observations and greater biodiversity. 
