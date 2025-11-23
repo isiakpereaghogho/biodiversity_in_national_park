@@ -111,7 +111,7 @@ Most observed species (common name): I extracted the top species name from the o
 
 Species spotted the most at each park? 
 
-For each park, I found the species with the maximum total observations and saved the result as park_top_species.csv.
+For each park, I found the species with the maximum total observations.
 
 **FURTHER RESEARCH AND RECOMMENDATION**
 
@@ -119,7 +119,7 @@ For each park, I found the species with the maximum total observations and saved
 Massive missingness in conservation_status (96.7% Not Listed).
 This will bias conclusions. I recommend enriching the dataset with authoritative conservation status sources (IUCN Red List, national lists) for missing species to have robust results.
 
-Species name matching: I used scientific_name as the join key. If names have synonyms or spelling variants, consider taxonomic name resolution (e.g., GBIF backbone) for more accurate merges.
+Species name matching: I used scientific_name as the join key. 
 
 Re-run the association test excluding 'No status' and present adjusted results.
 
